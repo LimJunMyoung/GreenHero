@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "TTLaundryGothicB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #b7e9ff;
+}
+img.bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  background-color: #b7e9ff;
+  top: 30%;
+
+  transform: scale(1.3);
+}
+
+img.logo {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 740px;
+  height: 154px;
+}
+
+p.subtitle {
+  position: absolute;
+  font-family: "TTLaundryGothicB", sans-serif;
+  font-size: 32px;
+  color: #422205;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul.thumnail-wrap {
+  position: absolute;
+  display: flex;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+li.thumnail {
+  margin-right: 10px;
+  list-style: none;
+}
+
+li.thumnail > p {
+  text-align: center;
+  font-family: "TTLaundryGothicB", sans-serif;
+  font-size: 24px;
+  color: #422205;
+}
+
+img.btn {
+  position: absolute;
+  top: 63%;
+}
+
+img.prev-btn {
+  left: 20%;
+}
+
+img.next-btn {
+  right: 20%;
+}
+
+@media screen and (max-width: 1600px) {
+  img.prev-btn {
+    left: 10%;
+  }
+
+  img.next-btn {
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  img.prev-btn {
+    left: 5%;
+  }
+
+  img.next-btn {
+    right: 5%;
+  }
+}
