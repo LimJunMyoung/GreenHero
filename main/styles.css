@@ -47,29 +47,45 @@ p.subtitle {
   transform: translate(-50%, -50%);
 }
 
-ul.thumnail-wrap {
+a.thumnail-link {
+  text-decoration: none;
+  width: 336px;
+  margin-right: 10px;
+}
+
+div.thumnail-wrap {
+  width: 1008px;
   position: absolute;
   display: flex;
+  flex-wrap: wrap;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-li.thumnail {
+div.thumnail {
+  width: 336px;
   margin-right: 10px;
   list-style: none;
+  cursor: pointer;
 }
 
-li.thumnail > p {
+div.thumnail > img {
+  width: 336px;
+}
+
+div.thumnail > p {
   text-align: center;
   font-family: "TTLaundryGothicB", sans-serif;
   font-size: 24px;
   color: #422205;
+  text-decoration: none;
 }
 
 img.btn {
   position: absolute;
   top: 63%;
+  cursor: pointer;
 }
 
 img.prev-btn {
