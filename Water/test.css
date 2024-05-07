@@ -1,0 +1,240 @@
+.surface-pro-812 .rectangle-14 {
+  mix-blend-mode: multiply;
+  background: linear-gradient(#FFD6EA, #FFD6EA), linear-gradient(#FFFDCF, #FFFDCF);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+  
+.container {
+  text-align: center;
+}
+
+.wallpapers{
+  position: absolute;
+  width: 90%;
+  height: 85%;
+  top: 5%;
+  left: 5%;
+}
+.wallpapers img{
+  width: 6.9%;
+  padding-left: 1%;
+  padding-top: 1%;
+}
+
+
+/* 욕조 */
+.bathtub {
+  position: absolute;
+  width: 40%; 
+  height: 30%; 
+  bottom: 10%;
+  left: 9%;
+  display: flex;
+  align-items: flex-end; 
+}
+.bathtub .bathtub1 img  {
+  position: absolute; 
+  bottom: -10%;
+  left: 0;
+  width: 100%; 
+  height: 210%; 
+}
+
+/* 샤워기 본체 */
+.shower-head {
+  position: absolute;
+  left: 3%; 
+  top: -65%; 
+  transform: translate(0, -50%); 
+  width: 15%; 
+  height: 25%; 
+}
+
+.shower-head img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* 옥조 부품 */
+.bathtub2{
+  position: absolute;
+  width: 95%;
+  height: 40%;
+  left: 3%;
+  bottom: 55%;
+  border-radius: 25% 25% 50% 50%;
+  background-color: #BDDCDE;
+}
+
+/* 욕조 그림자 */
+.bathtubShadow{
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: -18%;
+  border-radius: 25% 25% 50% 50%;
+  background-color: rgba(68, 66, 67, 0.452);
+}
+
+/* 욕조안 물 */
+.water {
+  position: absolute;
+  width: 95%;
+  height: 40%;
+  left: 3%;
+  bottom: 55%;
+  border-radius: 25% 25% 50% 50%;
+}
+
+/* 샤워기 물 */
+.drop {
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #B5F6FF;
+  opacity: 0.7;
+}
+
+/* 샤위 손잡이 */
+.handle {
+  position: absolute; 
+  top: 40%; 
+  left: 25%; 
+  width: 10%; 
+  height: 10%; 
+  margin: 0 auto; 
+  cursor: pointer;
+}
+.handle img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* 거울 */
+.mirror{
+  position: absolute;
+  right: 15%;
+  top: 14%;
+  width: 17%; 
+  height: 30%; 
+}
+
+.mirror img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* 새면대 */
+.washstand{
+  position: absolute;
+  width: 20%; 
+  height: 40%; 
+  bottom: 5%;
+  right: 13%;
+  display: flex;
+  align-items: flex-end; 
+}
+
+.washstand .washstand1{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.washstand .washstand1 img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -10%;
+}
+
+/* 새면대 부품 */
+.washstand .washstand2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* 새면대 부품2 */
+.washstand .washstand2 img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 45%;
+}
+
+/* 새면대 부품3 */
+.washstand .washstand3{
+  position: absolute;
+  width: 90%;
+  height: 35%;
+  left: 5%;
+  bottom: 60%;
+  border-radius: 25% 25% 50% 50%;
+  background-color: #BDDCDE;
+}
+
+/* 새면대 그림자 */
+.washstandShadow{
+  position: absolute;
+  width: 90%;
+  height: 20%;
+  bottom: -10%;
+  left: 5%;
+  border-radius: 50% 50% 50% 50%;
+  background-color: rgba(68, 66, 67, 0.452);
+}
+
+/* 새면대 안 물 */
+.water2 {
+  position: absolute;
+  width: 95%;
+  height: 35%;
+  left: 3%;
+  bottom: 60%;
+  border-radius: 25% 25% 50% 50%;
+}
+
+/* 새면대 본채 */
+.washstand-head {
+  position: absolute;
+  left: 43.7%; 
+  top: -23%; 
+  width: 10.4%; 
+  height: 8%; 
+  background-color: #E1F3F3;
+  border-radius: 40% 40% 40% 40%;
+}
+
+/* 새면대 물 */
+.drop2 {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #B5F6FF;
+  opacity: 0.7;
+}
+
+/* 새면대 손잡이 */
+.handle2 {
+  position: absolute; 
+  top: 40%; 
+  left: 60%; 
+  width: 10%; 
+  height: 10%; 
+  margin: 0 auto; 
+  cursor: pointer;
+}
+.handle2 img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
