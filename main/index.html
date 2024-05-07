@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그린 히어로</title>
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- slick css -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <!-- 내 css -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- 배경이미지 -->
+    <img class="bg" src="images/bg.svg" alt="" />
+    <!-- 타이틀 -->
+    <p class="subtitle">우리는 환경을 지키는</p>
+    <img class="logo" src="images/logo.png" alt="" />
+
+    <!-- 이미지 슬라이드 -->
+    <div class="thumnail-wrap">
+      <div class="thumnail">
+        <img src="images/thumnailTrash.png" alt="" />
+        <p>쓰레기를 올바르게 버려요!</p>
+      </div>
+      <a class="thumnail-link" href="../Water/test.html">
+        <div class="thumnail">
+          <img src="images/thumnailWater.png" alt="" />
+          <p>앗! 물이 낭비되고 있어요!</p>
+        </div>
+      </a>
+      <a class="thumnail-link" href="../TreeAndAnimals/index.html">
+        <div class="thumnail">
+          <img src="images/thumnailTreeAndAnimals.png" alt="" />
+          <p>나무가 자라고 동물들을 찾아요</p>
+        </div>
+      </a>
+
+      <a class="thumnail-link" href="../Light/main.html">
+        <div class="thumnail">
+          <img src="images/thumnailLight.png" alt="" />
+          <p>불을 꺼서 전기를 아껴요!</p>
+        </div>
+      </a>
+
+      <div class="thumnail">
+        <img src="images/thumnailFlower.png" alt="" />
+        <p>꽃이 다시 피어나도록 도와주세요!</p>
+      </div>
+    </div>
+    <img class="btn prev-btn" src="images/prevBtn.svg" alt="" />
+
+    <img class="btn next-btn" src="images/nextBtn.svg" alt="" />
+
+    <!-- 사용자 정의 스크립트 -->
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".thumnail-wrap").slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          prevArrow: $(".prev-btn"),
+          nextArrow: $(".next-btn"),
+        });
+      });
+    </script>
+  </body>
+</html>
