@@ -1,21 +1,38 @@
+const canvas = document.getElementById('treeCanvas');
+const ctx = canvas.getContext('2d');
+// 캔버스 크기 설정 (브라우저 크기에 맞게 조절)
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-function rgbToHex(r, g, b) {
-  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-}
-function getColorAtPosition(canvas, x, y) {
+// 배경 이미지 로딩
+const backgroundImage = new Image();
+backgroundImage.src = './img/Group.png';  // 배경 이미지 경로
+
+backgroundImage.onload = () => {
+  // 이미지 로딩이 완료되면 캔버스 배경에 그립니다.
+  ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+  // tree.init();  // 나무 초기화
+};
+
+
+function getColorAtPosition(canvas, event) {
   const ctx = canvas.getContext('2d');
+  const x = event.clientX;  // Access clientX and clientY from the event object
+  const y = event.clientY;
   const pixel = ctx.getImageData(x, y, 1, 1).data;
-  const r = pixel[0] / 255;  // 빨강 값 (0.0 ~ 1.0)
-  const g = pixel[1] / 255;  // 초록 값 (0.0 ~ 1.0)
-  const b = pixel[2] / 255;  // 파랑 값 (0.0 ~ 1.0)
-  const hex = rgbToHex(r, g, b);
 
-  // Debug logs
+  // Extract RGB values directly (0 ~ 255)
+  const r = pixel[0];
+  const g = pixel[1];
+  const b = pixel[2];
+
+  // Debug logs (optional)
   console.log(`Clicked Pixel (R, G, B): (${r}, ${g}, ${b})`);
-  console.log(`Hex Color: #${hex}`);
 
-  return hex;
+  // Return RGB object
+  return { r, g, b };
 }
+
 
 
 export class Branch {
@@ -233,8 +250,7 @@ export class Tree {
   }
 }
 
-const canvas = document.getElementById('treeCanvas');
-const ctx = canvas.getContext('2d');
+// const canvas = document.getElementById('treeCanvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const tree = new Tree(ctx, canvas.width / 2, canvas.height, false);
@@ -247,40 +263,76 @@ window.addEventListener('resize', () => {
 });
 
 const content = document.querySelector('.content');
+// content.addEventListener('click', (event) => {
+//   const { clientX, clientY } = event;
+//   tree.showClickCount(clientX, clientY);
+//   if (!tree.isClickLimitReached()) {
+//       const { clientX, clientY } = event;
+//       tree.clickCount++;
+//       tree.decrementClickCount();
+
+//       if (tree.clickCount <= 3) {
+//           new Tree(ctx, clientX, clientY);
+//       } else {
+//           new Tree(ctx, clientX, clientY);
+
+//           if (tree.clickCount % 2 === 0) {
+//               tree.drawAnimal(clientX, clientY, tree.clickCount % 3);
+//           } else {
+//               tree.drawAnimal(clientX - 40, clientY, tree.clickCount % 3);
+//           }
+//       }
+//   } else {
+//       // 클릭 제한에 도달하면 아무것도 하지 않음
+//   }
 content.addEventListener('click', (event) => {
-  const { clientX, clientY } = event;
-  tree.showClickCount(clientX, clientY);
-  if (!tree.isClickLimitReached()) {
+  // Get clicked pixel's RGB color
+  const clickedColor = getColorAtPosition(canvas, event);
+  console.log('Clicked Pixel (R, G, B):', clickedColor); // Debug output
+
+  // Define target color RGB values
+  const targetColorRGB = {
+    r: 226, // Replace with provided RGB values
+    g: 245,
+    b: 223
+  };
+
+  // Compare clicked color with target color
+  if (
+    clickedColor.r === targetColorRGB.r &&
+    clickedColor.g === targetColorRGB.g &&
+    clickedColor.b === targetColorRGB.b
+  ) {
+    // Click color matches target color
+    console.log('클릭한 색상이 원하는 색상과 일치합니다.');
+
+    // Check if click limit is reached
+    if (!tree.isClickLimitReached()) {
+      // Get click coordinates
       const { clientX, clientY } = event;
+
+      // Increment click count
       tree.clickCount++;
       tree.decrementClickCount();
 
+      // Create new tree based on click count
       if (tree.clickCount <= 3) {
-          new Tree(ctx, clientX, clientY);
+        new Tree(ctx, clientX, clientY);
       } else {
-          new Tree(ctx, clientX, clientY);
+        new Tree(ctx, clientX, clientY);
 
-          if (tree.clickCount % 2 === 0) {
-              tree.drawAnimal(clientX, clientY, tree.clickCount % 3);
-          } else {
-              tree.drawAnimal(clientX - 40, clientY, tree.clickCount % 3);
-          }
+        // Draw animal based on click count and parity
+        if (tree.clickCount % 2 === 0) {
+          tree.drawAnimal(clientX, clientY, tree.clickCount % 3);
+        } else {
+          tree.drawAnimal(clientX - 40, clientY, tree.clickCount % 3);
+        }
       }
+    } else {
+      // Click limit reached, do nothing
+    }
   } else {
-      // 클릭 제한에 도달하면 아무것도 하지 않음
-  }
-});
-
-content.addEventListener('click', (event) => {
-  const { clientX, clientY } = event;
-  const clickedColor = getColorAtPosition(canvas, clientX, clientY);
-  console.log('Clicked Color:', clickedColor); // 디버그용 출력
-  const targetColor = '#E2F5DF'; // 원하는 색상 코드
-
-  if (clickedColor === targetColor) {
-      tree.draw(); // 나무를 다시 그리는 메서드 호출
-      console.log('클릭한 색상이 원하는 색상과 일치합니다.');
-  } else {
-      console.log('클릭한 색상이 원하는 색상과 일치하지 않습니다.');
+    // Click color does not match target color
+    console.log('클릭한 색상이 원하는 색상과 일치하지 않습니다.');
   }
 });
