@@ -47,13 +47,7 @@ p.subtitle {
   transform: translate(-50%, -50%);
 }
 
-a.thumnail-link {
-  text-decoration: none;
-  width: 336px;
-  margin-right: 10px;
-}
-
-div.thumnail-wrap {
+ul.thumnail-wrap {
   width: 1008px;
   position: absolute;
   display: flex;
@@ -63,18 +57,18 @@ div.thumnail-wrap {
   transform: translate(-50%, -50%);
 }
 
-div.thumnail {
+li.thumnail, li.thumnail-link {
   width: 336px;
   margin-right: 10px;
   list-style: none;
   cursor: pointer;
 }
 
-div.thumnail > img {
+li.thumnail > img, li.thumnail-link > img {
   width: 336px;
 }
 
-div.thumnail > p {
+li.thumnail > p, li.thumnail-link > p {
   text-align: center;
   font-family: "TTLaundryGothicB", sans-serif;
   font-size: 24px;
@@ -95,6 +89,29 @@ img.prev-btn {
 img.next-btn {
   right: 20%;
 }
+
+#contentArea{
+  position: fixed;
+  top: 2.5%;
+  left: 15%;
+  width: 70%;
+  height: 95%;
+  display: none;
+  margin: 3px;
+  z-index: 10;
+}
+
+#overlay {
+  position: fixed; /* 고정 위치 */
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+  z-index: 9; /* 다른 요소들 위에 오도록 설정 */
+}
+
 
 @media screen and (max-width: 1600px) {
   img.prev-btn {

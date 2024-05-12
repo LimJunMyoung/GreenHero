@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  
+  background-size: cover;
+}
+
+.content {
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+#treeCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+#clickCountOverlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+  }
+  25% {
+      opacity: 1;
+  }
+  75% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+#clickCountText {
+  text-align: center;
+  font-size: 18px;
+  margin: 0;
+}
