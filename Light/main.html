@@ -6,39 +6,33 @@
     <title>Document</title>
 
     <style>
-        .cont{
-            background-image: url("./img/background_img.png");
-            overflow: visible;
-            width: 100vw;
-            height: 100vh;
-        }
-        #ball, #chair{
-            position: absolute;
-        }
-        #ball{
-            top: 730px;
-            left: 200px;
-        }
-        #chair{
-            top: 670px;
-            left: 1000px;
-        }
+        
     </style>
-    <link rel="stylesheet" href="./커튼/ccc.css">
-    <link rel="stylesheet" href="./사물/light.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./전등/light.css">
+    <link rel="stylesheet" href="./커튼/curtain.css">
+    <link rel="stylesheet" href="./사물/objects.css">
 </head>
-<body>
+<body background="./img/lightBg.svg">
     <div class="cont">
         <div class="resizable-div" id="resizableDiv">
             <!-- 내용 -->
         </div>
-        <div class="ccc" id="c_right"></div>
+        <div class="opacity"></div>
 
-        <div id="ball" onclick="move_ball()" ><img src="./img/ball.png" alt="축구공"></div>
-        <div id="chair" onclick="move_chair()"><img src="./img/movingChair.png" alt="나무흔들의자"></div>
+        <div class="curtain" id="c_right"></div>
+        <div class="curtainRod"></div>
+
+        <div id="ball" onclick="move_ball()" ><img src="./img/ball.svg" alt="축구공"></div>
+        <div id="chair" onclick="move_chair()"><img src="./img/movingChair.svg" alt="나무흔들의자"></div>
+        <div class="switch">
+            <img src="./img/button_on.svg" alt="">
+        </div>
+        <div class="window"></div>
     </div>
     
-    <script src="./사물/light.js"></script>
-    <script src="./커튼/ccc.js"></script>
+    <script src="./사물/objects.js"></script>
+    <script src="./커튼/curtain.js"></script>
+    <script src="./전등/light.js"></script>
 </body>
 </html>

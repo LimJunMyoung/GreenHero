@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    /* overflow: hidden; */
+    
+    background-size: contain;
+    background-repeat: no-repeat;  }
+  
+.cont{
+    /* background-image: url("./img/lightBg.svg"); */
+    /* background-size: cover; */
+    /* overflow: hidden; */
+    
+    width: 100vw;
+    height: 100vh;
+    
+    
+    transition: opacity 0.3s ease;
+}
+.window{
+    background-image: url("./img/window.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 1000px;
+    
+    
+    display: flex;
+    position: absolute;
+    left: 220px;
+    top: 250px;
+    
+}
+.curtainRod{
+    background-image: url("./img/curtainRod.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 22px;
+    width: 1000px;
+
+    display: flex;
+    position: absolute;
+    left: 180px;
+    top: 220px;
+}

@@ -1,0 +1,12 @@
+.switch{
+    position: absolute;
+    left: 1200px;
+    top: 450px;
+}
+.opacity{
+    background-color: black;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+}

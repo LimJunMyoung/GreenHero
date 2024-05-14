@@ -1,0 +1,17 @@
+.resizable-div {
+  margin-left: 200px;
+  margin-top: 217px;
+  width: 448px;
+  height: 500px;
+  max-width: 448px; /* 최대 너비 설정 */
+  background-image: url(../img/curtain.svg);
+  border: 0px solid #000;
+  resize: both; /* 사용자가 크기 조절할 수 있도록 설정 */
+  overflow: auto; /* 내용이 div를 벗어날 때 스크롤바 표시 */
+  background-position : right;
+  position: absolute;
+  z-index: 1;
+  background-size: contain;
+}
+
+

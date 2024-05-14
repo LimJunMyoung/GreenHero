@@ -1,0 +1,24 @@
+#ball{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    top: 730px;
+    left: 200px;
+}
+
+#chair{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    top: 730px;
+    left: 1000px;
+}
+
+
+#ball, #chair{
+    position: absolute;
+}
+#ball{
+    top: 830px;
+    left: 200px;
+}
